@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .page-title {
+        @apply text-3xl font-bold mb-4 text-indigo-800;
+    }
+
+    .page-desc {
+        @apply text-sm;
+    }
+}
