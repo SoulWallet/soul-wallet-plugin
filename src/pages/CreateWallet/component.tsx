@@ -19,10 +19,10 @@ export function CreateWallet() {
     return (
         <>
             <div className=" p-6 h-full flex flex-col">
-                <div className="flex items-center mb-12">
+                <Link to="/" className="flex items-center mb-12">
                     <img className="w-12" src={Logo} />
                     <img className="w-24" src={LogoText} />
-                </div>
+                </Link>
                 <div>
                     {step === 0 && (
                         <>
