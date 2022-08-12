@@ -6,7 +6,7 @@ import { SendEmail } from "@src/components/SendEmail";
 import { CreatePassword } from "@src/components/CreatePassword";
 
 export function CreateWallet() {
-    const [step, setStep] = useState<number>(1);
+    const [step, setStep] = useState<number>(0);
 
     const onVerified = () => {
         setStep(1);
@@ -27,7 +27,7 @@ export function CreateWallet() {
                     {step === 0 && (
                         <>
                             <div className="page-title mb-4">
-                                Email Verification
+                                Email verification
                             </div>
                             <SendEmail onVerified={onVerified} />
                         </>
@@ -40,7 +40,7 @@ export function CreateWallet() {
                             <CreatePassword onCreated={onCreated} />
                         </>
                     )}
-                    {/* {step === 2 && (
+                    {step === 2 && (
                         <>
                             <div className="page-title mb-8">
                                 Congratulations
@@ -59,12 +59,10 @@ export function CreateWallet() {
                                 </div>
                             </div>
                             <Link to="/wallet">
-                                <button className="btn btn-primary w-full mb-2">
-                                    Continue
-                                </button>
+                                <a className="btn btn-blue w-full">Continue</a>
                             </Link>
                         </>
-                    )} */}
+                    )}
                 </div>
             </div>
         </>

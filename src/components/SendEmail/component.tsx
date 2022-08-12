@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import cn from "classnames";
 import IconEnter from "@src/assets/enter.svg";
 import IconLoading from "@src/assets/loading.gif";
 import { Input } from "../Input";
@@ -45,7 +44,7 @@ export function SendEmail({ onVerified }: SendEmailProps) {
         if (emailSent && verifyCode.length !== 6) {
             setErrors((prev) => ({
                 ...prev,
-                code: "Not a valid verification code",
+                code: "Not a valid verification code (6 digits)",
             }));
             flag = false;
         }
@@ -132,7 +131,7 @@ export function SendEmail({ onVerified }: SendEmailProps) {
                     <img
                         src={IconEnter}
                         onClick={doVerify}
-                        className="w-10 h-10 block mx-auto cursor-pointer fixed bottom-14 left-0 right-0 hover:"
+                        className="w-10 h-10 block mx-auto cursor-pointer fixed bottom-14 left-0 right-0"
                     />
                 </>
             ) : emailSending ? (

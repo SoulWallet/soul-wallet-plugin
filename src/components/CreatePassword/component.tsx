@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import IconEnter from "@src/assets/enter.svg";
 import { Input } from "../Input";
 
 interface CreatePasswordProps {
@@ -93,9 +94,11 @@ export function CreatePassword({ onCreated }: CreatePasswordProps) {
                 />
             </div>
 
-            <a className="btn btn-blue w-full" onClick={doCreate}>
-                Create
-            </a>
+            <img
+                src={IconEnter}
+                onClick={doCreate}
+                className="w-10 h-10 block mx-auto cursor-pointer fixed bottom-14 left-0 right-0"
+            />
         </div>
     );
 }
