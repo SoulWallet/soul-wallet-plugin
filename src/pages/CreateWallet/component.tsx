@@ -47,7 +47,7 @@ export function CreateWallet() {
                             </div>
                             <div className="page-desc mb-10">
                                 <div className="mb-2">
-                                    You have craeted your first wallet!
+                                    You have created your first wallet!
                                 </div>
                                 <div className="mb-2">
                                     Now you can use this wallet to receive fund.

@@ -88,6 +88,7 @@ export function SendEmail({ onVerified }: SendEmailProps) {
             <div className="mb-2">
                 <Input
                     value={email}
+                    placeholder="info@xxx.com"
                     onChange={(val) => {
                         setEmail(val);
                         setErrors((prev) => ({ ...prev, email: "" }));

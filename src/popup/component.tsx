@@ -16,7 +16,7 @@ export function Popup() {
 
     // Renders the component tree
     return (
-        <div className="artboard phone-1 phone">
+        <div className="artboard phone-1 phone rounded-2xl bg-white">
             <Router>
                 <Routes>
                     <Route path="/" element={<Welcome />} />
