@@ -16,10 +16,11 @@ export function Popup() {
 
     // Renders the component tree
     return (
-        <div className="artboard phone-1">
+        <div className="artboard phone-1 phone">
             <Router>
                 <Routes>
-                    <Route path="/" element={<Welcome />} />
+                    <Route path="/" element={<CreateWallet />} />
+                    {/* <Route path="/" element={<Welcome />} /> */}
                     <Route path="/wallet" element={<Wallet />} />
                     <Route path="/create-wallet" element={<CreateWallet />} />
                 </Routes>

@@ -23,3 +23,7 @@ soul-wallet-extension
 │
 └───sdk(contract related actions)
 ```
+
+## Resources
+
+(figma)[https://www.figma.com/file/pLBiwLUILaudvLxVmo7Msd/Untitled?node-id=0%3A1]

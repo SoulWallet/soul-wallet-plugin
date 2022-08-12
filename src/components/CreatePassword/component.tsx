@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Input } from "../Input";
 
 interface CreatePasswordProps {
     onCreated: () => void;
@@ -57,47 +58,44 @@ export function CreatePassword({ onCreated }: CreatePasswordProps) {
     return (
         <div className="form-control w-full">
             <div className="mb-2">
-                <label className="label">
-                    <span className="label-text">New password</span>
-                </label>
-                <input
+                <Input
                     type="password"
-                    placeholder="Enter new password"
+                    label="New password"
+                    error={errors.newPassword}
                     value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                    className={`input input-bordered w-full ${
-                        errors.confirmPassword && "input-error"
-                    }`}
+                    onChange={(val) => {
+                        setNewPassword(val);
+                        setErrors((prev) => ({
+                            newPassword: "",
+                            confirmPassword: "",
+                        }));
+                    }}
                 />
-                {errors.newPassword && (
-                    <div className="text-red-600 text-left text-xs mt-1">
-                        {errors.newPassword}
-                    </div>
-                )}
             </div>
             <div className="mb-10">
-                <label className="label">
-                    <span className="label-text">Confirm password</span>
-                </label>
-                <input
+                <Input
                     type="password"
-                    placeholder="Enter password again"
+                    label="Confirm password"
+                    verified={
+                        newPassword !== "" &&
+                        confirmPassword !== "" &&
+                        newPassword === confirmPassword
+                    }
+                    error={errors.confirmPassword}
                     value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    className={`input input-bordered w-full ${
-                        errors.confirmPassword && "input-error"
-                    }`}
+                    onChange={(val) => {
+                        setConfirmPassword(val);
+                        setErrors((prev) => ({
+                            newPassword: "",
+                            confirmPassword: "",
+                        }));
+                    }}
                 />
-                {errors.confirmPassword && (
-                    <div className="text-red-600 text-left text-xs mt-1">
-                        {errors.confirmPassword}
-                    </div>
-                )}
             </div>
 
-            <button className="btn btn-primary w-full mb-2" onClick={doCreate}>
+            <a className="btn btn-blue w-full" onClick={doCreate}>
                 Create
-            </button>
+            </a>
         </div>
     );
 }

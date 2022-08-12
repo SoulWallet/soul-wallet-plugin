@@ -1,40 +1,27 @@
 import React from "react";
-import { Navbar } from "@src/components/Navbar";
+import Logo from "@src/assets/logo.svg";
+import LogoText from "@src/assets/logo-text.svg";
+import { WalletLib } from "../../../soul-wallet-corelib";
 import { Link } from "react-router-dom";
 import sdk from "@src/sdk";
 import config from "@src/config";
 
 export function Welcome() {
-    const doCreateWallet = async () => {
-        sdk.wallet.createWallet();
-    };
     return (
         <>
-            <Navbar />
-            <div className="p-4 text-center h-5/6 flex flex-col justify-between">
-                <div>
-                    <div className="page-title">Welcome</div>
-                    <div className="page-desc">
-                        {config.walletName} is the next generation wallet which
-                        supports account abstraction, social recovery, etc..
-                    </div>
+            {/* <Navbar /> */}
+            <div className="h-full pt-11 pb-16 text-center flex flex-col justify-between">
+                <div className="flex flex-col items-center">
+                    <img src={Logo} className="w-40 h-40 mb-2" />
+                    <img src={LogoText} />
                 </div>
-
-                <div>
-                    <div className="mb-2 text-gray-400 text-sm">
-                        New to soul wallet?
-                    </div>
+                <div className="px-6">
                     <Link to="/create-wallet">
-                        <button
-                            className="btn btn-primary w-full mb-2"
-                            onClick={doCreateWallet}
-                        >
+                        <button className="btn btn-blue w-full mb-4">
                             Create a Wallet
                         </button>
                     </Link>
-                    <button className="btn btn-secondary w-full">
-                        Recover a Wallet
-                    </button>
+                    <a className="text-blueDeep text-sm">Recover a wallet</a>
                 </div>
             </div>
         </>

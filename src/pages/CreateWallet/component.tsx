@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar } from "@src/components/Navbar";
+import Logo from "@src/assets/logo.svg";
+import LogoText from "@src/assets/logo-text.svg";
 import { SendEmail } from "@src/components/SendEmail";
 import { CreatePassword } from "@src/components/CreatePassword";
 
 export function CreateWallet() {
-    const [step, setStep] = useState<number>(0);
+    const [step, setStep] = useState<number>(1);
 
     const onVerified = () => {
         setStep(1);
@@ -17,30 +18,29 @@ export function CreateWallet() {
 
     return (
         <>
-            <Navbar />
-            <div className="p-4 text-center h-5/6 flex flex-col justify-between">
+            <div className=" p-6 h-full flex flex-col">
+                <div className="flex items-center mb-12">
+                    <img className="w-12" src={Logo} />
+                    <img className="w-24" src={LogoText} />
+                </div>
                 <div>
                     {step === 0 && (
                         <>
-                            <div className="page-title">Create Wallet</div>
-
-                            <div className="page-desc mb-8">
-                                Please verify email first to create wallet.
+                            <div className="page-title mb-4">
+                                Email Verification
                             </div>
                             <SendEmail onVerified={onVerified} />
                         </>
                     )}
                     {step === 1 && (
                         <>
-                            <div className="page-title">Create Wallet</div>
-
-                            <div className="page-desc mb-8">
-                                Please create password
+                            <div className="page-title mb-4">
+                                Create password
                             </div>
                             <CreatePassword onCreated={onCreated} />
                         </>
                     )}
-                    {step === 2 && (
+                    {/* {step === 2 && (
                         <>
                             <div className="page-title mb-8">
                                 Congratulations
@@ -64,7 +64,7 @@ export function CreateWallet() {
                                 </button>
                             </Link>
                         </>
-                    )}
+                    )} */}
                 </div>
             </div>
         </>
