@@ -1,0 +1,3 @@
+[submodule "soul-wallet-corelib"]
+	path = soul-wallet-corelib
+	url = git@soul:proofofsoulprotocol/soul-wallet-corelib.git
