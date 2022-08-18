@@ -37,7 +37,7 @@ module.exports = {
             },
             // add support for fonts and svg
             {
-                test: /\.(woff|woff2|eot|ttf|otf|svg|gif)$/i,
+                test: /\.(woff|woff2|eot|ttf|otf|svg|gif|png)$/i,
                 type: "asset/resource",
             },
         ],

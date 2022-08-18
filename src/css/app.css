@@ -23,8 +23,24 @@
         @apply bg-blue brightness-90;
     }
 
+    .btn-red {
+        @apply text-white bg-redLight border-0;
+    }
+
+    .btn-red:hover {
+        @apply bg-redLight brightness-90;
+    }
+
     .input {
         @apply rounded-full bg-black bg-opacity-5 border-transparent;
+    }
+
+    .bg-actions {
+        background: rgba(217, 217, 217, .2);
+    }
+
+    .add-guardian-shadow {
+        box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.05);
     }
 }
 
@@ -32,6 +48,16 @@
     font-family: 'Inter';
     font-weight: 400;
     src        : url('../assets/fonts/Inter/Inter-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 600;
+    src        : url('../assets/fonts/Inter/Inter-SemiBold.ttf');
+}
+
+body {
+    font-family: 'Inter';
 }
 
 .input:focus {

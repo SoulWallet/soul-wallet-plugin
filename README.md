@@ -27,7 +27,8 @@ soul-wallet-extension
 ## Resources
 
 (figma)[https://www.figma.com/file/pLBiwLUILaudvLxVmo7Msd/Untitled?node-id=0%3A1]
+(heroicons)[https://heroicons.com/]
 
 ## TODO
 
-[] ignore browser dark mode setting
+[x] ignore browser dark mode setting

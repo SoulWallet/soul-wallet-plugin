@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "@src/components/Button";
 import IconEnter from "@src/assets/enter.svg";
 import IconLoading from "@src/assets/loading.gif";
 import { Input } from "../Input";
@@ -135,18 +136,14 @@ export function SendEmail({ onVerified }: SendEmailProps) {
                         className="w-10 h-10 block mx-auto cursor-pointer fixed bottom-14 left-0 right-0"
                     />
                 </>
-            ) : emailSending ? (
-                <a className="btn btn-blue cursor-not-allowed font-normal text-base mt-2 opacity-70 flex gap-2">
-                    <img src={IconLoading} className="w-4 h-4" />
-                    Sending
-                </a>
             ) : (
-                <a
-                    className="btn btn-blue font-normal text-base mt-2"
+                <Button
+                    loading={emailSending}
+                    classNames="font-normal btn-blue mt-2"
                     onClick={doSend}
                 >
                     Send verification code
-                </a>
+                </Button>
             )}
         </div>
     );
