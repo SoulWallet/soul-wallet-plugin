@@ -1,5 +1,5 @@
 {
-    "name": "soul-wallet-extension",
+    "name": "soul-wallet-plugin",
     "version": "0.0.1",
     "description": "Browser extension for soul wallet",
     "main": "index.js",
@@ -12,10 +12,6 @@
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/aeksco/react-typescript-chrome-extension-starter.git"
-    },
     "keywords": [
         "react",
         "typescript",
@@ -25,10 +21,6 @@
     ],
     "author": "Alexander Schwartzberg",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/aeksco/react-typescript-chrome-extension-starter/issues"
-    },
-    "homepage": "https://github.com/aeksco/react-typescript-chrome-extension-starter#readme",
     "devDependencies": {
         "@babel/core": "^7.11.6",
         "@babel/preset-env": "^7.11.5",

@@ -42,7 +42,7 @@ export default function Activities() {
                                 className="w-10 opacity-50"
                             />
                         )}
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col">
                             <div>{item.actionType}</div>
                             <div className="flex flex-col justify-between opacity-50 text-black">
                                 {item.interactAddress.slice(0, 4)}...
