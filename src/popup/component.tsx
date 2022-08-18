@@ -2,6 +2,8 @@ import React from "react";
 import browser from "webextension-polyfill";
 import { MemoryRouter as Router, Routes, Route } from "react-router-dom";
 import { Welcome } from "@src/pages/Welcome";
+import { ToastContainer } from "material-react-toastify";
+import "material-react-toastify/dist/ReactToastify.css";
 import { CreateWallet } from "@src/pages/CreateWallet";
 import { Wallet } from "@src/pages/Wallet";
 import GuardianDetail from "@src/pages/Guardian/detail";
@@ -22,7 +24,6 @@ export function Popup() {
             <Router>
                 <Routes>
                     {/* <Route path="/" element={<Welcome />} /> */}
-                    <Route path="/" element={<Wallet />} />
                     <Route path="/wallet" element={<Wallet />} />
                     <Route path="/create-wallet" element={<CreateWallet />} />
                     <Route path="/guardian/add" element={<GuardianAdd />} />
@@ -30,8 +31,10 @@ export function Popup() {
                         path="/guardian/:address"
                         element={<GuardianDetail />}
                     />
+                    <Route path="*" element={<Wallet />} />
                 </Routes>
             </Router>
+            <ToastContainer position="bottom-center" />
         </div>
     );
 }

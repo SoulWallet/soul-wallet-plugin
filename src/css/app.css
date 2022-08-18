@@ -68,3 +68,7 @@ body {
 .btn {
     text-transform: unset;
 }
+
+.Toastify__toast {
+    border-radius: 0;
+}

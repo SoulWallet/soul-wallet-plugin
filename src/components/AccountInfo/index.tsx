@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "material-react-toastify";
 import { useNavigate } from "react-router-dom";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 import { copyText } from "@src/lib/tools";
@@ -12,6 +13,8 @@ interface IProps {
 
 export default function AccountInfo({ account, action }: IProps) {
     const navigate = useNavigate();
+
+    const [activated, setActivated] = useState<boolean>(false);
     const [copied, setCopied] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -24,6 +27,8 @@ export default function AccountInfo({ account, action }: IProps) {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
+            setActivated(true);
+            toast.success("Account activated");
         }, 1500);
     };
 
@@ -32,15 +37,16 @@ export default function AccountInfo({ account, action }: IProps) {
         setTimeout(() => {
             setLoading(false);
             navigate("/wallet");
+            toast.success("Guardian removed");
         }, 1500);
     };
 
     return (
-        <div className="p-4 pt-0 text-center flex flex-col items-center justify-between mb-4">
-            <Jazzicon diameter={100} seed={jsNumberForAddress(account)} />
+        <div className="p-4 pt-0 text-center flex flex-col items-center justify-between">
+            <Jazzicon diameter={90} seed={jsNumberForAddress(account)} />
             <div className="text-lg mt-1 mb-2">Account 1</div>
             <div
-                className="gap-2 flex items-center mb-6 cursor-pointer tooltip"
+                className="gap-2 flex items-center cursor-pointer tooltip"
                 data-tip={copied ? "Copied" : "Click to copy"}
                 onMouseLeave={() => setTimeout(() => setCopied(false), 400)}
                 onClick={doCopy}
@@ -50,9 +56,9 @@ export default function AccountInfo({ account, action }: IProps) {
                     {account.slice(0, 4)}...{account.slice(-4)}
                 </span>
             </div>
-            {action === "activate" && (
+            {action === "activate" && !activated && (
                 <Button
-                    classNames="btn-blue"
+                    classNames="btn-blue mb-4 mt-6"
                     onClick={doActivate}
                     loading={loading}
                 >
@@ -61,7 +67,7 @@ export default function AccountInfo({ account, action }: IProps) {
             )}
             {action === "remove" && (
                 <Button
-                    classNames="btn-red"
+                    classNames="btn-red mt-6"
                     onClick={doRemove}
                     loading={loading}
                 >

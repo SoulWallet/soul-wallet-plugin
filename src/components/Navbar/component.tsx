@@ -42,17 +42,13 @@ export function Navbar({ backUrl }: IProps) {
                         className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                     >
                         <li>
-                            <a onClick={doLockWallet}>Lock Wallet</a>
+                            <Link to="/create-wallet">Create Wallet</Link>
                         </li>
+                        {/* <li>
+                            <a onClick={doLockWallet}>Lock Wallet</a>
+                        </li> */}
                         <li>
                             <a onClick={doRecoverWallet}>Recover Wallet</a>
-                            {/* 
-                            <Link
-                                to="/recover-wallet"
-                                onClick={doRecoverWallet}
-                            >
-                                Recover Wallet
-                            </Link> */}
                         </li>
                     </ul>
                 </div>
