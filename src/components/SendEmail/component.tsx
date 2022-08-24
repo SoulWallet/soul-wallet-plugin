@@ -5,6 +5,7 @@ import IconLoading from "@src/assets/loading.gif";
 import { Input } from "../Input";
 
 interface SendEmailProps {
+    emailLabel?: string;
     onVerified: () => void;
 }
 
@@ -13,7 +14,7 @@ interface FormErrors {
     code: string;
 }
 
-export function SendEmail({ onVerified }: SendEmailProps) {
+export function SendEmail({ emailLabel, onVerified }: SendEmailProps) {
     const [email, setEmail] = useState<string>("");
     const [verifyCode, setVerifyCode] = useState<string>("");
     const [gapTime, setGapTime] = useState<any>(0);
@@ -88,6 +89,7 @@ export function SendEmail({ onVerified }: SendEmailProps) {
         <div className="form-control w-full">
             <div className="mb-2">
                 <Input
+                    label={emailLabel}
                     value={email}
                     placeholder="info@xxx.com"
                     onChange={(val) => {

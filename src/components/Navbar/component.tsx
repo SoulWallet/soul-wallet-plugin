@@ -48,7 +48,7 @@ export function Navbar({ backUrl }: IProps) {
                             <a onClick={doLockWallet}>Lock Wallet</a>
                         </li> */}
                         <li>
-                            <a onClick={doRecoverWallet}>Recover Wallet</a>
+                            <Link to="/recover-wallet">Recover Wallet</Link>
                         </li>
                     </ul>
                 </div>

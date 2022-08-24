@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "@src/assets/logo.svg";
-import LogoText from "@src/assets/logo-text.svg";
+import Logo from "@src/components/Logo";
 import { SendEmail } from "@src/components/SendEmail";
 import { CreatePassword } from "@src/components/CreatePassword";
 
@@ -19,10 +18,7 @@ export function CreateWallet() {
     return (
         <>
             <div className="p-6 h-full flex flex-col">
-                <Link to="/" className="flex items-center mb-12">
-                    <img className="w-12" src={Logo} />
-                    <img className="w-24" src={LogoText} />
-                </Link>
+                <Logo />
                 <div>
                     {step === 0 && (
                         <>

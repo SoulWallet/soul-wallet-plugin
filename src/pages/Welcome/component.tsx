@@ -17,11 +17,15 @@ export function Welcome() {
                 </div>
                 <div className="px-6">
                     <Link to="/create-wallet">
-                        <button className="btn btn-blue w-full mb-4">
+                        <a className="btn btn-blue w-full mb-4">
                             Create a Wallet
-                        </button>
+                        </a>
                     </Link>
-                    <a className="text-blueDeep text-sm">Recover a wallet</a>
+                    <Link to="/recover-wallet">
+                        <a className="text-blueDeep text-sm">
+                            Recover a wallet
+                        </a>
+                    </Link>
                 </div>
             </div>
         </>

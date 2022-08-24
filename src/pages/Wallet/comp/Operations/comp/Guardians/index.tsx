@@ -35,7 +35,7 @@ const guardianList: IGuardian[] = [
 
 export default function Assets() {
     return (
-        <div className="relative pb-12">
+        <div className="relative pb-12 bg-white">
             {guardianList.map((item) => (
                 <Link
                     to={`/guardian/${item.address}`}

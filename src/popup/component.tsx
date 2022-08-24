@@ -5,6 +5,7 @@ import { Welcome } from "@src/pages/Welcome";
 import { ToastContainer } from "material-react-toastify";
 import "material-react-toastify/dist/ReactToastify.css";
 import { CreateWallet } from "@src/pages/CreateWallet";
+import { RecoverWallet } from "@src/pages/RecoverWallet";
 import { Wallet } from "@src/pages/Wallet";
 import GuardianDetail from "@src/pages/Guardian/detail";
 import GuardianAdd from "@src/pages/Guardian/add";
@@ -20,12 +21,13 @@ export function Popup() {
 
     // Renders the component tree
     return (
-        <div className="artboard phone-1 phone rounded-2xl bg-white text-base">
+        <div className="artboard phone-1 phone bg-white text-base">
             <Router>
                 <Routes>
                     {/* <Route path="/" element={<Welcome />} /> */}
                     <Route path="/wallet" element={<Wallet />} />
                     <Route path="/create-wallet" element={<CreateWallet />} />
+                    <Route path="/recover-wallet" element={<RecoverWallet />} />
                     <Route path="/guardian/add" element={<GuardianAdd />} />
                     <Route
                         path="/guardian/:address"
