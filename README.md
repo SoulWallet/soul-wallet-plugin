@@ -1,4 +1,5 @@
 # Soul Wallet
++ Deprecated, see this repo for latest version: https://github.com/proofofsoulprotocol/soul-wallet-packages
 
 ## Code Structure
 
